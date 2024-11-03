@@ -8,17 +8,21 @@ def read_file(file_path):
         return None
 
 
-def read_file_by_line(file_path):
-    try:
-        with open(file_path, 'r') as file:
-            lines = file.readlines()
-        return [line.strip() for line in lines]
-    except FileNotFoundError:
-        print(f"The file {file_path} does not exist.")
-        return None
-
-
 def write_file(file_path, content):
     with open(file_path, 'w') as file:
         file.write(content)
-    print(f"Content written to {file_path}")
+
+
+def get_string_asci_dictionary(): 
+    dictionary = {}
+    for asci_number in range(128): 
+        dictionary[chr(asci_number)] = asci_number
+    
+    return dictionary
+
+def get_asci_string_dictionary(): 
+    dictionary = {}
+    for asci_number in range(128): 
+        dictionary[asci_number] = chr(asci_number)
+    
+    return dictionary
